@@ -618,11 +618,7 @@ public abstract class AbstractBinderFactory implements BinderFactory {
             PhysicalTableDictionary physicalTableDictionary,
             DataSourceMetadataService dataSourceMetadataService
     ) {
-        return new SegmentIntervalsHashIdGenerator(
-                physicalTableDictionary,
-                dataSourceMetadataService,
-                buildSigningFunctions()
-        );
+        return new SegmentIntervalsHashIdGenerator(dataSourceMetadataService, buildSigningFunctions());
     }
 
     /**
