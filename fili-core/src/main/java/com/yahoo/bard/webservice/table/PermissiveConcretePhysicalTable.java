@@ -20,7 +20,7 @@ import javax.validation.constraints.NotNull;
  * is backed <tt>PermissiveAvailability</tt>. The different <tt>Availability</tt> affects how available intervals
  * of a table are calculated and returned.
  */
-public class PermissiveConcretePhysicalTable extends ConcretePhysicalTable {
+public class PermissiveConcretePhysicalTable extends BasePhysicalTable {
     /**
      * Create a permissive concrete physical table.
      *

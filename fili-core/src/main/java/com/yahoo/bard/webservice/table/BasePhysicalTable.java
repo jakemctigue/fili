@@ -32,7 +32,8 @@ import javax.validation.constraints.NotNull;
 public abstract class BasePhysicalTable implements PhysicalTable {
     private static final Logger LOG = LoggerFactory.getLogger(BasePhysicalTable.class);
 
-    private final TableName name;
+    private final String name;
+    private final TableName tableName;
     private final PhysicalTableSchema schema;
     private Availability availability;
 
@@ -52,21 +53,23 @@ public abstract class BasePhysicalTable implements PhysicalTable {
             @NotNull Map<String, String> logicalToPhysicalColumnNames,
             @NotNull Availability availability
     ) {
-        this.name = name;
+        this.name = name.asName();
+        this.tableName = name;
         this.availability = availability;
         this.schema = new PhysicalTableSchema(timeGrain, columns, logicalToPhysicalColumnNames);
     }
 
     @Override
     public TableName getTableName() {
-        return name;
+        return tableName;
     }
 
     @Override
     public String getName() {
-        return getTableName().asName();
+        return name;
     }
 
+    @Override
     public Set<DataSourceName> getDataSourceNames() {
         // TODO: Once the availability setter is removed from this class, move this to the constructor
         return getAvailability().getDataSourceNames().stream()
