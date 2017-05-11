@@ -107,7 +107,7 @@ public class DataSourceMetadataService {
 
     /**
      * Update the information with respect to the segment metadata of a particular data source.
-     * This operation should be atomic per dataSourceName.
+     * This operation update both segment mappings for the dataSourceName.
      *
      * @param dataSourceName  The data source to which the metadata refer.
      * @param metadata  The updated datasource metadata.
