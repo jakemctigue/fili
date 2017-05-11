@@ -38,7 +38,7 @@ public class PermissiveAvailability extends BaseMetadataAvailability {
      * )};
      * Instead of returning the intersection of all available intervals, this method returns the union of them.
      *
-     * @param ignoredConstraint  Constrains are ignored, because <tt>PermissiveAvailability</tt> returns as much
+     * @param ignoredConstraint  Constrains are ignored, because <tt>PermissiveAvailability</tt> returns as many
      * available intervals as possible by, for example, allowing missing intervals and returning unions of available
      * intervals
      *
