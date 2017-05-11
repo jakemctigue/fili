@@ -13,7 +13,7 @@ Current
     * `TableName` was serving double-duty, and it was causing problems and confusion. Splitting the concepts fixes it.
 
 - [Add a `BaseMetadataAvailability` as a parallel to `BaseCompositeAvailability`](https://github.com/yahoo/fili/pull/263)
-    * `Concrete` and `PassiveAvailability` both extend this new base `Availability`
+    * `Concrete` and `PermissiveAvailability` both extend this new base `Availability`
 
 - [Prepare For Partial Data V2](https://github.com/yahoo/fili/pull/264)
     * Add new query context for druid's uncovered interval feature
