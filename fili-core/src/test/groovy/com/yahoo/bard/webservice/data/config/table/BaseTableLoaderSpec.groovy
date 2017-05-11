@@ -63,8 +63,7 @@ class BaseTableLoaderSpec extends Specification {
 
         @Override
         PhysicalTable build(ResourceDictionaries dictionaries, DataSourceMetadataService metadataService) {
-            !Objects.isNull(physicalTable) ?
-                    physicalTable :
+            physicalTable ?:
                     new ConcretePhysicalTable(
                             TableName.of(getName().asName()),
                             DefaultTimeGrain.DAY.buildZonedTimeGrain(DateTimeZone.UTC),
