@@ -10,6 +10,11 @@ import java.util.Comparator;
 public interface DataSourceName {
 
     /**
+     * Comparator to order DataSourceNames by their asName methods, using the native String comparator.
+     */
+    Comparator<DataSourceName> AS_NAME_COMPARATOR = Comparator.comparing(DataSourceName::asName);
+
+    /**
      * Return a string representation of a table name.
      *
      * @return the name
@@ -50,10 +55,4 @@ public interface DataSourceName {
             }
         };
     }
-
-
-    /**
-     * Comparator to order DataSourceNames by their asName methods, using the native String comparator.
-     */
-    Comparator<DataSourceName> AS_NAME_COMPARATOR = Comparator.comparing(DataSourceName::asName);
 }
