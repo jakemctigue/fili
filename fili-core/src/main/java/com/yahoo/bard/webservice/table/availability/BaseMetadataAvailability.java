@@ -14,7 +14,7 @@ import java.util.Set;
 import javax.validation.constraints.NotNull;
 
 /**
- * An availability based on a DataSourceMetadataService, which is backed by a single data source in that service.
+ * An availability based on a DataSourceMetadataService backed by a single data source.
  */
 public abstract class BaseMetadataAvailability implements Availability {
 
