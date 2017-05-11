@@ -16,9 +16,9 @@ import javax.validation.constraints.NotNull;
 /**
  * An implementation of concrete physical table with permissive availability.
  * <p>
- * This is different from its parent <tt>ConcretePhysicalTable</tt>. <tt>PermissiveConcretePhysicalTable</tt>
- * is backed <tt>PermissiveAvailability</tt>. The different <tt>Availability</tt> affects how available intervals
- * of a table are calculated and returned.
+ * This is different from its parent {@link ConcretePhysicalTable}. {@link PermissiveConcretePhysicalTable} is backed
+ * {@link PermissiveAvailability}. The different {@link Availability} affects how available intervals of a table are
+ * calculated and returned.
  */
 public class PermissiveConcretePhysicalTable extends BasePhysicalTable {
     /**
