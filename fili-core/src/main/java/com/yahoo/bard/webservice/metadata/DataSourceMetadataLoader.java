@@ -34,7 +34,7 @@ import javax.inject.Singleton;
 /**
  * Datasource metadata loader sends requests to the druid datasource metadata endpoint ('datasources') and returns the
  * lists of available data segments for each datasource. It then builds Datasource Metadata objects which pivot this
- * data into columns of intervals and then updates the Data Source Metadata Service.
+ * data into columns of intervals and then updates the {@link DataSourceMetadataService}.
  * <p>
  * Note that this uses the segmentMetadata query that touches the coordinator.
  */
