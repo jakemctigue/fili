@@ -255,8 +255,7 @@ public class DataSourceMetadataLoader extends Loader<Boolean> {
     protected SuccessCallback buildDataSourceMetadataSuccessCallback(DataSourceName dataSourceName) {
         return rootNode -> {
             try {
-                DataSourceMetadata dataSourceMetadata = mapper.treeToValue(rootNode, DataSourceMetadata.class);
-                metadataService.update(dataSourceName, dataSourceMetadata);
+                metadataService.update(dataSourceName, mapper.treeToValue(rootNode, DataSourceMetadata.class));
             } catch (IOException e) {
                 LOG.error(DRUID_METADATA_READ_ERROR.format(dataSourceName.asName()), e);
                 throw new UnsupportedOperationException(DRUID_METADATA_READ_ERROR.format(dataSourceName.asName()), e);
