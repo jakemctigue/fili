@@ -159,7 +159,7 @@ public abstract class BasePhysicalTable implements PhysicalTable {
         }
         if (obj instanceof BasePhysicalTable) {
             BasePhysicalTable that = (BasePhysicalTable) obj;
-            return Objects.equals(name.asName(), that.name.asName())
+            return Objects.equals(name, that.name)
                     && Objects.equals(schema, that.schema)
                     && Objects.equals(availability, that.availability);
         }
@@ -168,14 +168,14 @@ public abstract class BasePhysicalTable implements PhysicalTable {
 
     @Override
     public int hashCode() {
-        return Objects.hash(name.asName(), schema, availability);
+        return Objects.hash(name, schema, availability);
     }
 
     @Override
     public String toString() {
         return String.format(
                 "Physical table: '%s', schema: '%s', availability: '%s'",
-                name.asName(),
+                name,
                 schema,
                 availability
         );
